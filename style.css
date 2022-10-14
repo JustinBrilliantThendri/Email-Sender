@@ -46,7 +46,7 @@
     position : absolute;
     z-index : -1;
     color : #3038419f;
-    transform : translateX(0.25rem);
+    transform : translate(0.25rem, 0.075rem);
     font-size : 15px;
     transition : all 0.2s;
 }
@@ -140,7 +140,8 @@ button:hover{
 }
 
 button:active{
-    transform : scale(1.05);
+    transform : translateY(-0.2rem);
+    box-shadow : 0 2px 4px 3px #0076c06c;
 }
 
 @media screen and (max-width : 525px){
