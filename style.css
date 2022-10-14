@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing : border-box;
+    font-family : "Josefin Sans", sans-serif;
+}
+
+.container{
+    display : flex;
+    width : 100%;
+    height : 100%;
+    position : fixed;
+    justify-content : center;
+    align-items : center;
+    background : #2185D5;
+}
+
+.form{
+    background : #F3F3F3;
+    width : 45%;
+    min-width : 525px;
+    padding : 0 25px;
+    padding-bottom : 50px;
+    flex-direction : column;
+    z-index : -2;
+    border-radius : 10px;
+}
+
+.row{
+    margin-top : 50px;
+    display : flex;
+    width : 100%;
+}
+
+.jc{
+    justify-content : space-between;
+}
+
+.c{
+    justify-content : center;
+}
+
+.logo{
+    position : absolute;
+    z-index : -1;
+    color : #3038419f;
+    transform : translateX(0.25rem);
+    font-size : 15px;
+    transition : all 0.2s;
+}
+
+.input:has(input:focus) .logo, .input:has(input:valid) .logo, .input:has(textarea:focus) .logo, .input:has(textarea:valid) .logo{
+    font-size : 20px;
+    transform : translateX(-2.6rem);
+}
+
+.input{
+    border : 2px solid #0077C0;
+    padding : 10px;
+    border-radius : 5px;
+    transition : all 0.2s;
+    margin : 0 25px;
+    width : 100%;
+}
+
+.input:focus-within{
+    box-shadow : 0 0 2px 1px #0077C0;
+}
+
+.input::before{
+    content : "";
+    position : absolute;
+    font-size : 20px;
+    color : #3038419f;
+    z-index : -1;
+    transition : all 0.2s 0.2s;
+    transform : translateX(1.8rem);
+}
+
+.input:has(input:focus)::before, .input:has(input:valid)::before, .input:has(textarea:focus)::before, .input:has(textarea:valid)::before{
+    transform : translateY(-2rem);
+    font-size : 15px;
+}
+
+.input.from::before{
+    content : "From";
+}
+
+.input.to::before{
+    content : "To";
+}
+
+.input.email::before{
+    content : "Email";
+}
+
+.input.message::before{
+    content : "Message";
+}
+
+input{
+    width : 100%;
+    background : transparent;
+    border : none;
+    font-size : 20px;
+    color : #303841;
+}
+
+input:focus, textarea:focus{
+    outline : none;
+}
+
+textarea{
+    width : 100%;
+    resize : none;
+    background : transparent;
+    border : none;
+    font-size : 20px;
+    color : #303841;
+    height : 15vh;
+}
+
+button{
+    color : #F3F3F3;
+    background : #0077C0;
+    border : 2px solid #0077C0;
+    font-size : 20px;
+    padding : 10px 30px;
+    border-radius : 50px;
+    font-weight : bold;
+    letter-spacing : 1px;
+    transition : all 0.25s;
+}
+
+button:hover{
+    background : transparent;
+    color : #0077C0;
+}
+
+button:active{
+    transform : scale(1.05);
+}
+
+@media screen and (max-width : 525px){
+    .form{
+        padding : 0 20px;
+        padding-bottom : 40px;
+        width : 100%;
+        min-width : 0;
+    }
+    .row{
+        margin-top : 40px;
+    }
+    .input{
+        margin : 0 20px;
+    }
+}
